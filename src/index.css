@@ -49,3 +49,36 @@ code {
   background-color: rgb(226, 147, 147);
   --bs-btn-border-color: rgb(226, 147, 147);
 }
+.listitem {
+  list-style: none;
+  text-align: left;
+  border: 1px solid pink;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+}
+.todo-list {
+  padding: 0px;
+}
+.todo {
+  display: flex;
+  width: 100%;
+}
+.btnd {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+}
+.txt {
+  width: 70%;
+}
+.btnn {
+  background-color: white;
+  color: pink;
+  border: 2px solid;
+}
+#del-btn:hover {
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+}
