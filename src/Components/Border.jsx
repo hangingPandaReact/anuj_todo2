@@ -1,12 +1,11 @@
 import React from "react";
 import { Header } from "./Header";
-import { Todolist } from "./Todolist";
-// import { Todo } from "./Todolist";
+import { TodoItem } from "./TodoItem";
 export function Border() {
   return (
     <div className="box">
       <Header />
-      <Todolist />
+      <TodoItem />
     </div>
   );
 }
