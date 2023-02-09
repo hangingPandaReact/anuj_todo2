@@ -13,8 +13,9 @@ code {
 }
 .box {
   border: 2px solid black;
-  height: 500px;
-  width: 350px;
+  min-height: 500px;
+  max-height: auto;
+  min-width: 350px;
   max-width: 600px;
   margin: auto;
   padding: 20px;
@@ -105,4 +106,33 @@ code {
   height: 38px;
   margin-left: 5px;
   border-radius: 10px;
+}
+.completed {
+  text-decoration: line-through;
+  list-style: none;
+  text-align: left;
+}
+.edit-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.design {
+  background-color: transparent;
+  border: none;
+  color: gray;
+}
+.update {
+  background-color: transparent;
+  border: none;
+  color: gray;
+}
+.disaply {
+  display: none;
+}
+.txt {
+  width: 100%;
+}
+.-inputedit {
+  margin-left: 15px;
 }
