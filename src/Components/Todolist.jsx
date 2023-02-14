@@ -1,8 +1,9 @@
+import moment from "moment";
 import React, { useState } from "react";
 import { BsFillArchiveFill } from "react-icons/bs";
 import { BsFillPencilFill } from "react-icons/bs";
 import { BsFillPenFill } from "react-icons/bs";
-import { BsFillBackspaceReverseFill } from "react-icons/bs";
+import { BsXCircleFill } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
 
 export const TodoList = (props) => {
@@ -53,9 +54,7 @@ export const TodoList = (props) => {
 
   // Back function
   function Backlist(index) {
-    const edit = props.todoslist[index];
-    edit.isedit = !edit.isedit;
-    props.todoslist[index] = edit;
+    todoslist[index].isedit = false;
     settodoslist([...props.todoslist]);
   }
 
@@ -93,15 +92,14 @@ export const TodoList = (props) => {
                 <div className="txt">
                   {text?.isedit === true ? (
                     <div className="edit-item">
-                      <div>
-                        <input
-                          value={currentTodo}
-                          type="text"
-                          className="-inputedit"
-                          placeholder="Edit the task"
-                          onChange={(e) => handleinputupdate(e)}
-                        />
-                      </div>
+                      <input
+                        value={currentTodo}
+                        type="text"
+                        className="-inputedit"
+                        placeholder="Edit the task"
+                        onChange={(e) => handleinputupdate(e)}
+                      />
+
                       <div className="update-btn">
                         <button
                           className="update"
@@ -115,7 +113,7 @@ export const TodoList = (props) => {
                           className="back design"
                           onClick={() => Backlist(index)}
                         >
-                          <BsFillBackspaceReverseFill />
+                          <BsXCircleFill />
                         </button>
                       </div>
                     </div>
@@ -127,7 +125,10 @@ export const TodoList = (props) => {
                       key={index}
                     >
                       {text?.test}
-                      {newtodo?.id}
+                      {console.log(text, typeof text?.id, "internalllll")}{" "}
+                      <span className="time-data">
+                        {moment(text?.id).format("LTS")}
+                      </span>
                     </li>
                   )}
                 </div>
